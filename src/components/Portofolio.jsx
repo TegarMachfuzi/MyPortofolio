@@ -8,17 +8,14 @@ const Portofolio = () => {
     const portofolios = [
         {
             id: 1,
-            src: JavaPortofolio,
-            href: 'http://localhost:3000/'
+            src: JavaPortofolio
         },
         {
             id: 2,
-            src: ReactPortofolio,
-            href: 'http://localhost:3000/'
+            src: ReactPortofolio
         },{
             id: 3,
-            src: SpringBootPortofolio,
-            href: 'http://localhost:3000/'
+            src: SpringBootPortofolio
         }
     ]
   return (
@@ -31,11 +28,11 @@ const Portofolio = () => {
         
         <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0'>
         {
-                portofolios.map(({id, src, href}) => (
+                portofolios.map(({id, src}) => (
                     <div key={id} className='shadow-md shadow-gray-600 rounded-lg'>
                 <img src={src} alt="" className='rounded-md duration-200 hover:scale-105'/>
                 <div className='flex items-center justify-center'>
-                    <button className={`w-10/12 px-6 py-3 m-4 duration-200 hover:scale-105 ${href}`}>Show</button>
+                    <button className='w-10/12 px-6 py-3 m-4 duration-200 hover:scale-105'>Show</button>
                 </div>
             </div>        
                 ))
