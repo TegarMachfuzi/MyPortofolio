@@ -16,7 +16,7 @@ export function Testimonials({ locale }: { locale: Locale }) {
         <Reveal delay={0.1} className="mt-10 grid gap-6 md:grid-cols-2">
           {c.items.map((t, i) => (
             <Card key={i}>
-              <blockquote className="font-display text-xl leading-relaxed text-ink">"{t.quote}"</blockquote>
+              <blockquote className="font-display text-xl leading-relaxed text-ink">&ldquo;{t.quote}&rdquo;</blockquote>
               <figcaption className="mt-5 text-sm">
                 <span className="font-semibold text-ink">{t.name}</span>
                 <span className="text-muted"> · {t.role}{t.company !== '—' ? `, ${t.company}` : ''}</span>
