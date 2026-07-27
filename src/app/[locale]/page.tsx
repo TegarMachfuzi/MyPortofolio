@@ -3,6 +3,7 @@ import { Hero } from '@/components/sections/Hero';
 import { About } from '@/components/sections/About';
 import { Experience } from '@/components/sections/Experience';
 import { Skills } from '@/components/sections/Skills';
+import { Projects } from '@/components/sections/Projects';
 
 export default function Page({ params }: { params: { locale: string } }) {
   const locale = params.locale as Locale;
@@ -12,6 +13,7 @@ export default function Page({ params }: { params: { locale: string } }) {
       <About locale={locale} />
       <Experience locale={locale} />
       <Skills locale={locale} />
+      <Projects locale={locale} />
     </>
   );
 }
