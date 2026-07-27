@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { Container } from '@/components/ui/Container';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Badge } from '@/components/ui/Badge';
+import { Reveal } from '@/components/motion/Reveal';
 import { projects } from '@/content';
 import type { Locale } from '@/lib/i18n';
 
@@ -10,8 +11,10 @@ export function Projects({ locale }: { locale: Locale }) {
   return (
     <section id="projects" className="border-y border-line bg-surface py-24">
       <Container>
-        <SectionHeading eyebrow="04" title={c.heading} description={c.intro} />
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <Reveal>
+          <SectionHeading eyebrow="04" title={c.heading} description={c.intro} />
+        </Reveal>
+        <Reveal delay={0.1} className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {c.items.map((p) => (
             <article key={p.title} className="flex flex-col overflow-hidden rounded-2xl border border-line bg-canvas">
               <div className="relative aspect-[3/2] bg-line">
@@ -30,7 +33,7 @@ export function Projects({ locale }: { locale: Locale }) {
               </div>
             </article>
           ))}
-        </div>
+        </Reveal>
       </Container>
     </section>
   );

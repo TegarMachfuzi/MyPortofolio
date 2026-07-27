@@ -1,6 +1,7 @@
 import { Container } from '@/components/ui/Container';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Card } from '@/components/ui/Card';
+import { Reveal } from '@/components/motion/Reveal';
 import { testimonials } from '@/content';
 import type { Locale } from '@/lib/i18n';
 
@@ -9,8 +10,10 @@ export function Testimonials({ locale }: { locale: Locale }) {
   return (
     <section id="testimonials" className="py-24">
       <Container>
-        <SectionHeading eyebrow="05" title={c.heading} />
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
+        <Reveal>
+          <SectionHeading eyebrow="05" title={c.heading} />
+        </Reveal>
+        <Reveal delay={0.1} className="mt-10 grid gap-6 md:grid-cols-2">
           {c.items.map((t, i) => (
             <Card key={i}>
               <blockquote className="font-display text-xl leading-relaxed text-ink">"{t.quote}"</blockquote>
@@ -20,7 +23,7 @@ export function Testimonials({ locale }: { locale: Locale }) {
               </figcaption>
             </Card>
           ))}
-        </div>
+        </Reveal>
       </Container>
     </section>
   );
