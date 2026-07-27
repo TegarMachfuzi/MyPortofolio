@@ -1,0 +1,10 @@
+export { site } from './site';
+export { hero } from './hero';
+export { about } from './about';
+export { experience } from './experience';
+export { skills } from './skills';
+export { projects } from './projects';
+export { testimonials } from './testimonials';
+export { education } from './education';
+export { contact } from './contact';
+export * from './types';
