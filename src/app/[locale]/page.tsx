@@ -6,6 +6,7 @@ import { Skills } from '@/components/sections/Skills';
 import { Projects } from '@/components/sections/Projects';
 import { Testimonials } from '@/components/sections/Testimonials';
 import { Education } from '@/components/sections/Education';
+import { Contact } from '@/components/sections/Contact';
 
 export default function Page({ params }: { params: { locale: string } }) {
   const locale = params.locale as Locale;
@@ -18,6 +19,7 @@ export default function Page({ params }: { params: { locale: string } }) {
       <Projects locale={locale} />
       <Testimonials locale={locale} />
       <Education locale={locale} />
+      <Contact locale={locale} />
     </>
   );
 }
