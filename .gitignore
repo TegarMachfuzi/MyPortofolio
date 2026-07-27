@@ -10,6 +10,8 @@
 
 # production
 /build
+/.next/
+tsconfig.tsbuildinfo
 
 # misc
 .DS_Store
