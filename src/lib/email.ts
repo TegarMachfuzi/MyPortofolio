@@ -10,7 +10,7 @@ export async function sendContactEmail(input: ContactInput): Promise<void> {
   const { error } = await resend.emails.send({
     from,
     to,
-    replyTo: input.email,
+    reply_to: input.email,
     subject: `Portfolio message from ${input.name}`,
     text: `Name: ${input.name}\nEmail: ${input.email}\n\n${input.message}`,
   });
