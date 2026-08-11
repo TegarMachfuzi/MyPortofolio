@@ -5,9 +5,9 @@ export const education: Localized<EducationContent> = {
     heading: 'Education & certifications',
     items: [
       {
-        title: 'Degree', // TODO: replace with real value
-        org: 'University', // TODO: replace with real value
-        period: '2018 — 2022', // TODO: replace with real value
+        title: 'Bachelor\'s Degree in Computer Science',
+        org: 'STMIK BANISALEH',
+        period: '2017 — 2021',
       },
     ],
   },
@@ -15,9 +15,9 @@ export const education: Localized<EducationContent> = {
     heading: 'Pendidikan & sertifikasi',
     items: [
       {
-        title: 'Gelar', // TODO: ganti dengan nilai asli
-        org: 'Universitas', // TODO: ganti dengan nilai asli
-        period: '2018 — 2022', // TODO: ganti dengan nilai asli
+        title: 'Sarjana Teknik Informatika',
+        org: 'STMIK BANISALEH',
+        period: '2017 — 2021',
       },
     ],
   },

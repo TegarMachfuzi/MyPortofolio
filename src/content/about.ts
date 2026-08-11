@@ -3,18 +3,18 @@ import type { Localized, AboutContent } from './types';
 export const about: Localized<AboutContent> = {
   en: {
     heading: 'About',
-    lead: 'I am a Java backend developer who enjoys turning ambiguous requirements into clean, maintainable services.',
+    lead: 'I\'m Tegar Machfudzi, a Java Backend Developer with 3.5+ years of experience building scalable services.',
     paragraphs: [
-      'In my current role I build and maintain the backend that streams data to the Android team, working closely with the product owner to translate roadmap items into shipped features.',
-      'I care about readable code, sensible tests, and APIs that other developers actually enjoy consuming. I ramp up quickly on new domains and adapt well to changing priorities.',
+      'Currently working as a Software Engineer at PT Innovatz Global (placed at PT PEGADAIAN), where I provide data streams and services that power Android applications. I work closely with product owners to translate requirements into shipped features.',
+      'I\'m good at working in teams, quick to understand new work, and can adapt rapidly to changing environments. My experience spans fintech, logistics, and event photography platforms.',
     ],
   },
   id: {
     heading: 'Tentang',
-    lead: 'Saya seorang backend developer Java yang senang mengubah kebutuhan ambigu menjadi layanan yang bersih dan mudah dirawat.',
+    lead: 'Saya Tegar Machfudzi, Java Backend Developer dengan pengalaman 3.5+ tahun membangun layanan yang scalable.',
     paragraphs: [
-      'Di peran saat ini saya membangun dan memelihara backend yang mengalirkan data ke tim Android, bekerja sama erat dengan product owner untuk menerjemahkan peta jalan menjadi fitur yang rilis.',
-      'Saya peduli pada kode yang mudah dibaca, pengujian yang masuk akal, dan API yang nyaman digunakan developer lain. Saya belajar cepat pada domain baru dan beradaptasi baik dengan perubahan prioritas.',
+      'Saat ini bekerja sebagai Software Engineer di PT Innovatz Global (penempatan di PT PEGADAIAN), di mana saya menyediakan data stream dan layanan yang menggerakkan aplikasi Android. Saya bekerja dekat dengan product owner untuk menerjemahkan kebutuhan menjadi fitur yang rilis.',
+      'Saya terbiasa bekerja dalam tim, cepat memahami pekerjaan baru, dan dapat beradaptasi dengan cepat terhadap perubahan lingkungan. Pengalaman saya mencakup fintech, logistik, dan platform fotografi acara.',
     ],
   },
 };
