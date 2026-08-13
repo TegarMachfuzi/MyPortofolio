@@ -5,6 +5,7 @@ import { hero } from '@/content';
 import type { Locale } from '@/lib/i18n';
 import { OutlinedText } from '@/lib/brutal-utils';
 import { BrutalButton } from '@/components/ui/BrutalButton';
+import { ExperienceGrid } from './ExperienceGrid';
 
 export function Hero({ locale }: { locale: Locale }) {
   const c = hero[locale];
@@ -38,10 +39,7 @@ export function Hero({ locale }: { locale: Locale }) {
 
           {/* Right Column: ExperienceGrid */}
           <div className="border-black">
-            {/* ExperienceGrid will be added in Task 6 */}
-            <div className="p-8 lg:p-12 bg-[#FFFFFF]">
-              <p className="font-mono text-sm text-black">Experience grid placeholder</p>
-            </div>
+            <ExperienceGrid />
           </div>
         </div>
       </div>

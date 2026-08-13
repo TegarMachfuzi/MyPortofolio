@@ -18,8 +18,10 @@ describe('Hero', () => {
     // Check for secondary CTA
     expect(screen.getByRole('link', { name: /download cv/i })).toHaveAttribute('href', '/resume.pdf');
 
-    // Check for placeholder text
-    expect(screen.getByText('Experience grid placeholder')).toBeInTheDocument();
+    // Check for ExperienceGrid content
+    expect(screen.getByText('Freelance Frontend Developer')).toBeInTheDocument();
+    expect(screen.getByText('Photo-in')).toBeInTheDocument();
+    expect(screen.getByText('SPECIALIZING IN FULL STACK DEVELOPMENT')).toBeInTheDocument();
   });
 
   it('renders localized content for Indonesian locale', () => {
