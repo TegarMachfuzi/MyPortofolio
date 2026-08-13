@@ -9,6 +9,15 @@
   --muted: 107 103 96;     /* #6B6760 */
   --line: 232 227 218;     /* #E8E3DA */
   --accent: 194 65 12;     /* #C2410C */
+
+  /* Brutalist Theme Tokens */
+  --brutal-canvas: #F5F2EB;
+  --brutal-surface: #FFFFFF;
+  --brutal-black: #0A0A0A;
+  --brutal-yellow: #D4FF00;
+  --brutal-blue: #0066FF;
+  --brutal-line: 1px solid #0A0A0A;
+  --brutal-line-accent: 1px solid #D4FF00;
 }
 
 .dark {
