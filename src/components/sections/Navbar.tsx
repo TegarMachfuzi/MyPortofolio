@@ -1,71 +1,59 @@
 'use client';
-import { useEffect, useState } from 'react';
-import { Container } from '@/components/ui/Container';
-import { ThemeToggle } from '@/components/ui/ThemeToggle';
-import { LanguageToggle } from '@/components/ui/LanguageToggle';
-import { useActiveSection } from '@/hooks/useActiveSection';
+
+import React from 'react';
+import Link from 'next/link';
 import { site } from '@/content';
 import type { Locale } from '@/lib/i18n';
-import { cn } from '@/lib/cn';
 
 export function Navbar({ locale }: { locale: Locale }) {
   const content = site[locale];
-  const ids = ['about', 'experience', 'skills', 'projects', 'contact'];
-  const active = useActiveSection(ids);
-  const [open, setOpen] = useState(false);
-  useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
-  }, [open]);
+
+  const navLinks = [
+    { href: '#about', label: content.navItems[0].label },
+    { href: '#experience', label: content.navItems[1].label },
+    { href: '#skills', label: content.navItems[2].label },
+    { href: '#projects', label: content.navItems[3].label },
+    { href: '#contact', label: content.navItems[4].label },
+  ];
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-line/70 bg-canvas/80 backdrop-blur">
-      <Container className="flex h-16 items-center justify-between">
-        <a href="#home" className="font-display text-lg font-bold text-ink">TM.</a>
-        <nav className="hidden items-center gap-7 md:flex">
-          {content.navItems.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              className={cn(
-                'text-sm font-medium transition-colors hover:text-accent',
-                active === item.id ? 'text-ink' : 'text-muted',
-              )}
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
-        <div className="flex items-center gap-2">
-          <LanguageToggle locale={locale} />
-          <ThemeToggle />
-          <button
-            type="button"
-            className="ml-1 inline-flex h-9 w-9 items-center justify-center rounded-full border border-line text-ink md:hidden"
-            aria-label="Toggle menu"
-            aria-expanded={open}
-            onClick={() => setOpen((v) => !v)}
-          >
-            {open ? '✕' : '☰'}
-          </button>
-        </div>
-      </Container>
-      {open && (
-        <nav className="border-t border-line bg-canvas md:hidden">
-          <Container className="flex flex-col py-4">
-            {content.navItems.map((item) => (
-              <a
-                key={item.id}
-                href={`#${item.id}`}
-                onClick={() => setOpen(false)}
-                className="py-3 text-base font-medium text-ink"
-              >
-                {item.label}
-              </a>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#F5F2EB] border-b-2 border-black">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <div className="flex items-center">
+            <div className="flex-shrink-0 flex items-center gap-2">
+              <div className="w-8 h-8 bg-black"></div>
+              <span className="font-mono text-sm font-bold">CREATOR NAMA ANDA</span>
+            </div>
+          </div>
+
+          {/* Navigation Links */}
+          <nav className="hidden md:flex items-center">
+            {navLinks.map((link, index) => (
+              <React.Fragment key={link.href}>
+                {index > 0 && <div className="h-4 w-px bg-black mx-2"></div>}
+                <a
+                  href={link.href}
+                  className="font-mono text-sm hover:bg-[#D4FF00] px-3 py-1 transition-colors"
+                >
+                  {link.label.toUpperCase()}
+                </a>
+              </React.Fragment>
             ))}
-          </Container>
-        </nav>
-      )}
+          </nav>
+
+          {/* CTA Button */}
+          <div className="flex items-center">
+            <a
+              href="#contact"
+              className="bg-[#0066FF] text-black px-4 py-2 font-mono text-sm border-2 border-black hover:bg-[#D4FF00] transition-colors"
+            >
+              HAVE A PROJECT?
+            </a>
+          </div>
+        </div>
+      </div>
     </header>
   );
 }
