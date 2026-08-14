@@ -3,10 +3,20 @@
 import React from 'react';
 import { Code } from 'lucide-react';
 import { experience } from '@/content';
+import type { Locale } from '@/lib/i18n';
 
-export const ExperienceGrid: React.FC = () => {
-  // Get first 4 experience entries from the actual content
-  const experiences = experience.en.items.slice(0, 4);
+interface ExperienceGridProps {
+  locale: Locale;
+}
+
+export const ExperienceGrid: React.FC<ExperienceGridProps> = ({ locale }) => {
+  // Get first 4 experience entries from the localized content
+  const experiences = experience[locale].items.slice(0, 4);
+
+  // Localized highlight text
+  const highlightText = locale === 'id'
+    ? 'SPESIALIS DALAM FULL STACK DEVELOPMENT'
+    : 'SPECIALIZING IN FULL STACK DEVELOPMENT';
 
   return (
     <div className="h-full border-black">
@@ -31,7 +41,7 @@ export const ExperienceGrid: React.FC = () => {
         <div className="flex items-center gap-3">
           <Code size={24} />
           <p className="font-mono text-sm font-bold">
-            SPECIALIZING IN FULL STACK DEVELOPMENT
+            {highlightText}
           </p>
         </div>
       </div>

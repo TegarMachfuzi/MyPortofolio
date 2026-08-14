@@ -39,7 +39,7 @@ export function Hero({ locale }: { locale: Locale }) {
 
           {/* Right Column: ExperienceGrid */}
           <div className="border-black">
-            <ExperienceGrid />
+            <ExperienceGrid locale={locale} />
           </div>
         </div>
       </div>
