@@ -1,13 +1,11 @@
 'use client';
-import { useState } from 'react';
+
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Container } from '@/components/ui/Container';
-import { SectionHeading } from '@/components/ui/SectionHeading';
-import { Button } from '@/components/ui/Button';
-import { Reveal } from '@/components/motion/Reveal';
 import { contactSchema, type ContactInput } from '@/lib/validation';
 import { contact } from '@/content';
+import { BrutalButton } from '@/components/ui/BrutalButton';
 import type { Locale } from '@/lib/i18n';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
@@ -35,41 +33,73 @@ export function Contact({ locale }: { locale: Locale }) {
     }
   }
 
-  const inputCls = 'w-full rounded-lg border border-line bg-canvas px-4 py-3 text-ink placeholder:text-muted/70 focus:outline-none focus:ring-2 focus:ring-accent';
+  const inputCls = 'w-full border-2 border-black bg-white p-3 font-mono text-sm focus:outline-none focus:border-[#0066FF] text-black';
 
   return (
-    <section id="contact" className="border-t border-line bg-surface py-24">
-      <Container className="grid gap-10 md:grid-cols-[0.9fr_1.1fr]">
-        <Reveal>
-          <SectionHeading eyebrow="07" title={c.heading} description={c.intro} />
-        </Reveal>
-        <Reveal delay={0.1}>
-          <form noValidate onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+    <section id="contact" className="border-2 border-t-0 border-black py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-4 mb-8 border-b-2 border-black pb-4">
+          <span className="font-mono text-sm">07</span>
+          <h2 className="font-sans font-black text-3xl">{c.heading}</h2>
+        </div>
+
+        <div className="border-2 border-black p-8 bg-[#FFFFFF]">
+          <form noValidate onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             {/* honeypot */}
-            <input type="text" tabIndex={-1} autoComplete="off" aria-hidden {...register('company')} className="hidden" />
+            <input
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden
+              {...register('company')}
+              className="hidden"
+            />
             <div>
-              <label htmlFor="name" className="mb-1 block text-sm font-medium text-ink">Name</label>
-              <input id="name" className={inputCls} {...register('name')} />
-              {errors.name && <p className="mt-1 text-sm text-accent">{errors.name.message}</p>}
+              <label htmlFor="name" className="font-mono text-sm block mb-2 text-black">Name</label>
+              <input
+                id="name"
+                className={inputCls}
+                {...register('name')}
+                placeholder="Your name"
+              />
+              {errors.name && <p className="mt-1 text-sm text-[#0066FF] font-mono">{errors.name.message}</p>}
             </div>
             <div>
-              <label htmlFor="email" className="mb-1 block text-sm font-medium text-ink">Email</label>
-              <input id="email" type="email" className={inputCls} {...register('email')} />
-              {errors.email && <p className="mt-1 text-sm text-accent">{errors.email.message}</p>}
+              <label htmlFor="email" className="font-mono text-sm block mb-2 text-black">Email</label>
+              <input
+                id="email"
+                type="email"
+                className={inputCls}
+                {...register('email')}
+                placeholder="your@email.com"
+              />
+              {errors.email && <p className="mt-1 text-sm text-[#0066FF] font-mono">{errors.email.message}</p>}
             </div>
             <div>
-              <label htmlFor="message" className="mb-1 block text-sm font-medium text-ink">Message</label>
-              <textarea id="message" rows={5} className={inputCls} {...register('message')} />
-              {errors.message && <p className="mt-1 text-sm text-accent">{errors.message.message}</p>}
+              <label htmlFor="message" className="font-mono text-sm block mb-2 text-black">Message</label>
+              <textarea
+                id="message"
+                rows={4}
+                className={inputCls}
+                {...register('message')}
+                placeholder="Your message here..."
+              />
+              {errors.message && <p className="mt-1 text-sm text-[#0066FF] font-mono">{errors.message.message}</p>}
             </div>
-            <Button type="submit" disabled={status === 'submitting'}>
-              {status === 'submitting' ? 'Sending…' : 'Send →'}
-            </Button>
-            {status === 'success' && <p className="text-sm font-medium text-ink">Thanks — your message is on its way.</p>}
-            {status === 'error' && <p className="text-sm font-medium text-accent">Something went wrong. Please email me directly.</p>}
+            <div className="flex items-center gap-4">
+              <BrutalButton variant="primary" type="submit" disabled={status === 'submitting'}>
+                {status === 'submitting' ? 'SENDING...' : 'SEND MESSAGE'}
+              </BrutalButton>
+              {status === 'success' && (
+                <p className="text-sm font-mono text-black">Thanks — your message is on its way.</p>
+              )}
+              {status === 'error' && (
+                <p className="text-sm font-mono text-[#0066FF]">Something went wrong. Please email me directly.</p>
+              )}
+            </div>
           </form>
-        </Reveal>
-      </Container>
+        </div>
+      </div>
     </section>
   );
 }

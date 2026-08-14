@@ -7,6 +7,8 @@ interface BrutalButtonProps {
   href?: string;
   onClick?: () => void;
   className?: string;
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
 }
 
 export const BrutalButton: React.FC<BrutalButtonProps> = ({
@@ -14,13 +16,16 @@ export const BrutalButton: React.FC<BrutalButtonProps> = ({
   children,
   href,
   onClick,
-  className = ''
+  className = '',
+  type = 'button',
+  disabled = false
 }) => {
   const baseClasses = "px-6 py-3 font-mono text-sm border-2 border-black transition-colors";
   const primaryClasses = "bg-[#0066FF] text-black hover:bg-[#D4FF00]";
   const secondaryClasses = "bg-transparent text-black hover:bg-[#D4FF00]";
+  const disabledClasses = "opacity-50 cursor-not-allowed";
 
-  const classes = `${baseClasses} ${variant === 'primary' ? primaryClasses : secondaryClasses} ${className}`;
+  const classes = `${baseClasses} ${variant === 'primary' ? primaryClasses : secondaryClasses} ${disabled ? disabledClasses : ''} ${className}`;
 
   if (href) {
     return (
@@ -31,7 +36,12 @@ export const BrutalButton: React.FC<BrutalButtonProps> = ({
   }
 
   return (
-    <button onClick={onClick} className={classes}>
+    <button
+      onClick={onClick}
+      className={classes}
+      type={type}
+      disabled={disabled}
+    >
       {children}
     </button>
   );
