@@ -41,12 +41,12 @@ export function Navbar({ locale }: { locale: Locale }) {
           <div className="flex items-center">
             <Link href="#home" className="flex-shrink-0 flex items-center gap-3 group">
               <div className="relative w-10 h-10 bg-black flex items-center justify-center group-hover:bg-[#0066FF] transition-colors">
-                <div className="w-6 h-6 bg-[#D4FF00] group-hover:bg-black transition-colors"></div>
+                <span className="font-mono text-lg font-bold text-[#D4FF00] group-hover:text-black transition-colors">TM</span>
                 <div className="absolute inset-0 border-2 border-[#D4FF00] group-hover:border-black transition-colors"></div>
               </div>
               <div className="flex flex-col">
-                <span className="font-mono text-sm font-bold leading-tight">CREATOR</span>
-                <span className="font-mono text-xs font-medium leading-tight text-gray-700">NAMA ANDA</span>
+                <span className="font-mono text-sm font-bold leading-tight">TEGAR</span>
+                <span className="font-mono text-xs font-medium leading-tight text-gray-700">MACHFUZI</span>
               </div>
             </Link>
           </div>
@@ -137,7 +137,7 @@ export function Navbar({ locale }: { locale: Locale }) {
             {/* Mobile footer info */}
             <div className="px-4 py-3 border-t-2 border-black bg-[#F5F2EB]">
               <p className="font-mono text-xs text-gray-700">
-                © {new Date().getFullYear()} {content.name}
+                © {new Date().getFullYear()} Tegar Machfuzi
               </p>
             </div>
           </div>
