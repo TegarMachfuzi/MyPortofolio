@@ -28,10 +28,35 @@ export function Navbar({ locale }: { locale: Locale }) {
     { href: '#contact', label: content.navItems[4].label },
   ];
 
+  // Scrolling text words - developer/creative focused
+  const scrollWords = [
+    'CREATIVE', 'DEVELOPER', 'FULL STACK', 'DESIGNER',
+    'REACT', 'NEXT.JS', 'TYPESCRIPT', 'PROBLEM SOLVER',
+    'FRONTEND', 'BACKEND', 'UI/UX', 'INNOVATIVE',
+    'COLLABORATIVE', 'DETAIL-ORIENTED', 'FAST LEARNER'
+  ];
+
+  // Create seamless infinite scroll
+  const scrollContent = [...scrollWords, ...scrollWords, ...scrollWords];
+
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled ? 'bg-[#F5F2EB] shadow-sm' : 'bg-[#F5F2EB]'
     } border-b-2 border-black`}>
+      {/* Scrolling text banner */}
+      <div className="bg-black text-[#D4FF00] border-b-2 border-black overflow-hidden">
+        <div className="flex whitespace-nowrap">
+          <div className="animate-marquee flex items-center">
+            {scrollContent.map((word, index) => (
+              <React.Fragment key={`${word}-${index}`}>
+                <span className="font-mono text-sm font-bold px-6 py-1">{word}</span>
+                <span className="text-[#0066FF]">◆</span>
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Decorative top border accent */}
       <div className="h-1 bg-[#D4FF00] border-b border-black"></div>
 
