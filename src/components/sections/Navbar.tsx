@@ -70,8 +70,8 @@ export function Navbar({ locale }: { locale: Locale }) {
                 <div className="absolute inset-0 border-2 border-[#D4FF00] group-hover:border-black transition-colors"></div>
               </div>
               <div className="flex flex-col">
-                <span className="font-mono text-sm font-bold leading-tight">TEGAR</span>
-                <span className="font-mono text-xs font-medium leading-tight text-gray-700">MACHFUZI</span>
+                <span className="font-mono text-sm font-bold leading-tight text-black">TEGAR</span>
+                <span className="font-mono text-xs font-medium leading-tight text-black">MACHFUZI</span>
               </div>
             </Link>
           </div>
@@ -87,7 +87,7 @@ export function Navbar({ locale }: { locale: Locale }) {
                 )}
                 <a
                   href={link.href}
-                  className="relative font-mono text-xs font-bold hover:bg-[#D4FF00] px-4 py-2 transition-all duration-200 group"
+                  className="relative font-mono text-xs font-bold text-black hover:bg-[#D4FF00] px-4 py-2 transition-all duration-200 group"
                 >
                   {link.label.toUpperCase()}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0066FF] group-hover:w-full transition-all duration-200"></span>
@@ -100,7 +100,7 @@ export function Navbar({ locale }: { locale: Locale }) {
           <div className="hidden md:flex items-center">
             <a
               href="#contact"
-              className="relative bg-[#0066FF] text-black px-5 py-2.5 font-mono text-xs font-bold border-2 border-black hover:bg-[#D4FF00] transition-all duration-200 group overflow-hidden"
+              className="relative bg-[#D4FF00] text-black px-5 py-2.5 font-mono text-xs font-bold border-2 border-black hover:bg-[#0066FF] hover:text-white transition-all duration-200 group overflow-hidden"
             >
               <span className="relative z-10 flex items-center gap-2">
                 HAVE A PROJECT?
@@ -115,7 +115,7 @@ export function Navbar({ locale }: { locale: Locale }) {
             {/* Mobile CTA */}
             <a
               href="#contact"
-              className="hidden sm:flex bg-[#0066FF] text-black px-3 py-2 font-mono text-xs font-bold border-2 border-black hover:bg-[#D4FF00] transition-colors"
+              className="hidden sm:flex bg-[#D4FF00] text-black px-3 py-2 font-mono text-xs font-bold border-2 border-black hover:bg-[#0066FF] hover:text-white transition-colors"
             >
               PROJECT?
             </a>
@@ -151,7 +151,7 @@ export function Navbar({ locale }: { locale: Locale }) {
               ))}
               <a
                 href="#contact"
-                className="flex items-center justify-between bg-[#0066FF] text-black font-mono text-sm font-bold px-4 py-3 mt-3 border-2 border-black hover:bg-[#D4FF00] transition-colors group"
+                className="flex items-center justify-between bg-[#D4FF00] text-black font-mono text-sm font-bold px-4 py-3 mt-3 border-2 border-black hover:bg-[#0066FF] hover:text-white transition-colors group"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span>HAVE A PROJECT?</span>
@@ -161,7 +161,7 @@ export function Navbar({ locale }: { locale: Locale }) {
 
             {/* Mobile footer info */}
             <div className="px-4 py-3 border-t-2 border-black bg-[#F5F2EB]">
-              <p className="font-mono text-xs text-gray-700">
+              <p className="font-mono text-xs text-black">
                 © {new Date().getFullYear()} Tegar Machfuzi
               </p>
             </div>
