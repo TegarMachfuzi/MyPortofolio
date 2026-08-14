@@ -24,7 +24,7 @@ export function Testimonials({ locale }: { locale: Locale }) {
               } border-black p-6 bg-[#FFFFFF]`}
             >
               <blockquote className="font-mono text-sm leading-relaxed text-black mb-4">
-                "{item.quote}"
+                &ldquo;{item.quote}&rdquo;
               </blockquote>
               <cite className="font-mono text-xs not-italic text-black">
                 — {item.name}, {item.role}{item.company !== '—' ? ` at ${item.company}` : ''}
